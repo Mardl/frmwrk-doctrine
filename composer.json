@@ -4,10 +4,10 @@
     "description": "",
     "autoload": {
         "psr-4": {
-            "Doctrine": [
-                "Common/lib/Common",
-                "DBAL/lib/Doctrine",
-                "ORM/lib/Doctrine"
+            "Doctrine\\": [
+                "Common/lib/Doctrine/",
+                "DBAL/lib/Doctrine/",
+                "ORM/lib/Doctrine/"
             ]
         }
     }
