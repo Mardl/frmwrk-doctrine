@@ -1,5 +1,14 @@
 {
     "name": "Mardl/frmwrk-doctrine",
     "type": "package",
-    "description": ""
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Doctrine": [
+                "Common/lib/Common",
+                "DBAL/lib/Doctrine",
+                "ORM/lib/Doctrine"
+            ]
+        }
+    }
 }
