@@ -1,6 +1,5 @@
 {
-    "name": "frameworks/doctrine",
+    "name": "Mardl/frmwrk-doctrine",
     "type": "package",
     "description": "",
-    "homepage": "http://repo.dreiwerken.intern/frameworks/doctrine"
 }
