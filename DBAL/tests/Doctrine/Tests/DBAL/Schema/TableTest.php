@@ -423,21 +423,6 @@ class TableTest extends \Doctrine\Tests\DbalTestCase
     }
 
     /**
-     * @group DBAL-64
-     */
-    public function testQuotedTableName()
-    {
-        $table = new Table("`bar`");
-
-        $mysqlPlatform = new \Doctrine\DBAL\Platforms\MySqlPlatform();
-        $sqlitePlatform = new \Doctrine\DBAL\Platforms\SqlitePlatform();
-
-        $this->assertEquals('bar', $table->getName());
-        $this->assertEquals('`bar`', $table->getQuotedName($mysqlPlatform));
-        $this->assertEquals('"bar"', $table->getQuotedName($sqlitePlatform));
-    }
-
-    /**
      * @group DBAL-79
      */
     public function testTableHasPrimaryKey()

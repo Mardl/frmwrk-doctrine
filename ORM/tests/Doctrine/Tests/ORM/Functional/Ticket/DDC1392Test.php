@@ -46,7 +46,7 @@ class DDC1392Test extends \Doctrine\Tests\OrmFunctionalTestCase
         $file = $picture->getFile();
 
         // With this activated there will be no problem
-        //$file->__load();
+        //$file->_load();
 
         $picture->setFile(null);
 

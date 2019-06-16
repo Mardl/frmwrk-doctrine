@@ -49,12 +49,12 @@ interface Proxy
      *
      * @return void
      */
-    public function __load();
+    public function _load();
 
     /**
      * Is this proxy initialized or not.
      *
      * @return bool
      */
-    public function __isInitialized();
+    public function _isInitialized();
 }

@@ -1063,19 +1063,19 @@ DOCBLOCK;
     {
         $parser = $this->createTestParser();
 
-        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\True');
-        $this->assertTrue($result[0] instanceof True);
-        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\False');
-        $this->assertTrue($result[0] instanceof False);
-        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\Null');
-        $this->assertTrue($result[0] instanceof Null);
+        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\IsTrue');
+        $this->assertTrue($result[0] instanceof IsTrue);
+        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\IsFalse');
+        $this->assertTrue($result[0] instanceof IsFalse);
+        $result = $parser->parse('@Doctrine\Tests\Common\Annotations\IsNull');
+        $this->assertTrue($result[0] instanceof IsNull);
 
-        $result = $parser->parse('@True');
-        $this->assertTrue($result[0] instanceof True);
-        $result = $parser->parse('@False');
-        $this->assertTrue($result[0] instanceof False);
-        $result = $parser->parse('@Null');
-        $this->assertTrue($result[0] instanceof Null);
+        $result = $parser->parse('@IsTrue');
+        $this->assertTrue($result[0] instanceof IsTrue);
+        $result = $parser->parse('@IsFalse');
+        $this->assertTrue($result[0] instanceof IsFalse);
+        $result = $parser->parse('@IsNull');
+        $this->assertTrue($result[0] instanceof IsNull);
     }
 
      /**
@@ -1193,13 +1193,13 @@ class Marker {
 }
 
 /** @Annotation */
-class True {}
+class IsTrue {}
 
 /** @Annotation */
-class False {}
+class IsFalse {}
 
 /** @Annotation */
-class Null {}
+class IsNull {}
 
 namespace Doctrine\Tests\Common\Annotations\FooBar;
 

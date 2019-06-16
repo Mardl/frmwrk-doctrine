@@ -76,7 +76,6 @@ class InlineTest extends \PHPUnit_Framework_TestCase
             '"quoted string"' => 'quoted string',
             "'quoted string'" => 'quoted string',
             '12.30e+02' => 12.30e+02,
-            '0x4D2' => 0x4D2,
             '02333' => 02333,
             '.Inf' => -log(0),
             '-.Inf' => log(0),

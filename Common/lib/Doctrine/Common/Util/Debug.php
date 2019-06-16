@@ -95,7 +95,7 @@ final class Debug
 
                     if ($var instanceof \Doctrine\Common\Persistence\Proxy) {
                         $return->__IS_PROXY__ = true;
-                        $return->__PROXY_INITIALIZED__ = $var->__isInitialized();
+                        $return->__PROXY_INITIALIZED__ = $var->_isInitialized();
                     }
 
                     foreach ($reflClass->getProperties() as $reflProperty) {

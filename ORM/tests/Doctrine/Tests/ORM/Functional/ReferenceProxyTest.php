@@ -236,7 +236,7 @@ class ReferenceProxyTest extends \Doctrine\Tests\OrmFunctionalTestCase
         $className = \Doctrine\Common\Util\ClassUtils::getClass($entity);
 
         $this->assertInstanceOf('Doctrine\Common\Persistence\Proxy', $entity);
-        $this->assertFalse($entity->__isInitialized());
+        $this->assertFalse($entity->_isInitialized());
         $this->assertEquals('Doctrine\Tests\Models\ECommerce\ECommerceProduct', $className);
 
         $restName = str_replace($this->_em->getConfiguration()->getProxyNamespace(), "", get_class($entity));
@@ -244,7 +244,7 @@ class ReferenceProxyTest extends \Doctrine\Tests\OrmFunctionalTestCase
         $proxyFileName = $this->_em->getConfiguration()->getProxyDir() . DIRECTORY_SEPARATOR . str_replace("\\", "", $restName) . ".php";
         $this->assertTrue(file_exists($proxyFileName), "Proxy file name cannot be found generically.");
 
-        $entity->__load();
-        $this->assertTrue($entity->__isInitialized());
+        $entity->_load();
+        $this->assertTrue($entity->_isInitialized());
     }
 }

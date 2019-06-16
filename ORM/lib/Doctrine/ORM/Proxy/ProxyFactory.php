@@ -262,7 +262,7 @@ class ProxyFactory
                     $methods .= '            return ' . $cast . '$this->_identifier["' . $identifier . '"];' . "\n";
                     $methods .= '        }' . "\n";
                 }
-                $methods .= '        $this->__load();' . "\n";
+                $methods .= '        $this->_load();' . "\n";
                 $methods .= '        return parent::' . $method->getName() . '(' . $argumentString . ');';
                 $methods .= "\n" . '    }' . "\n";
             }
@@ -361,7 +361,7 @@ class <proxyClassName> extends \<className> implements \Doctrine\ORM\Proxy\Proxy
         $this->_identifier = $identifier;
     }
     /** @private */
-    public function __load()
+    public function _load()
     {
         if (!$this->__isInitialized__ && $this->_entityPersister) {
             $this->__isInitialized__ = true;
@@ -381,7 +381,7 @@ class <proxyClassName> extends \<className> implements \Doctrine\ORM\Proxy\Proxy
     }
 
     /** @private */
-    public function __isInitialized()
+    public function _isInitialized()
     {
         return $this->__isInitialized__;
     }

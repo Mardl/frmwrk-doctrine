@@ -1670,7 +1670,7 @@ class UnitOfWork implements PropertyChangedListener
 
         if ($this->getEntityState($entity, self::STATE_DETACHED) !== self::STATE_MANAGED) {
             if ($entity instanceof Proxy && ! $entity->__isInitialized__) {
-                $entity->__load();
+                $entity->_load();
             }
 
             // Try to look the entity up in the identity map.
@@ -1721,7 +1721,7 @@ class UnitOfWork implements PropertyChangedListener
                     $this->persistNew($class, $managedCopy);
                 } else {
                     if ($managedCopy instanceof Proxy && ! $managedCopy->__isInitialized__) {
-                        $managedCopy->__load();
+                        $managedCopy->_load();
                     }
                 }
             }
@@ -2114,7 +2114,7 @@ class UnitOfWork implements PropertyChangedListener
 
         foreach ($associationMappings as $assoc) {
             if ($entity instanceof Proxy && !$entity->__isInitialized__) {
-                $entity->__load();
+                $entity->_load();
             }
 
             $relatedEntities = $class->reflFields[$assoc['fieldName']]->getValue($entity);
@@ -2438,7 +2438,7 @@ class UnitOfWork implements PropertyChangedListener
                         $class->reflFields[$field]->setValue($entity, null);
                         $this->originalEntityData[$oid][$field] = null;
 
-                        continue;
+                        break;
                     }
 
                     if ( ! isset($hints['fetchMode'][$class->name][$field])) {
@@ -2902,7 +2902,7 @@ class UnitOfWork implements PropertyChangedListener
     public function initializeObject($obj)
     {
         if ($obj instanceof Proxy) {
-            $obj->__load();
+            $obj->_load();
 
             return;
         }
